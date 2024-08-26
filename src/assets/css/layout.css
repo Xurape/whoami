@@ -1,0 +1,11 @@
+* {
+    @apply font-sans;
+}
+
+html {
+    @apply bg-zinc-950 bg-cover bg-no-repeat text-white;
+}
+
+::selection {
+    @apply bg-ipvc text-white;
+}
