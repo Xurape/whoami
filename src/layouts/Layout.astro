@@ -12,6 +12,7 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<title>{title}</title>
 		<meta name="description" content="João Ferreira's portfolio and simple biography" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -31,7 +32,6 @@ const { title } = Astro.props;
 		<meta property="og:site_name" content="João Ferreira" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:locale:alternate" content="pt_PT" />
-		<title>{title}</title>
 	</head>
 	<body>
 		<slot />

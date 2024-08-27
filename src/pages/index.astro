@@ -15,7 +15,7 @@ const biographyData = await biography.json();
 	<div id="container" class="flex flex-col justify-center items-center h-full md:h-screen">
 		<div class="flex flex-col p-8 md:p-4 gap-8">
 			<div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-				<div class="flex flex-col gap-2 h-full justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-300">
+				<div id="hello" class="flex flex-col gap-2 h-full justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-1000 animate-fade-right animate-once animate-ease-in-out">
 					<Image src={img_hello} loading="eager" alt="Hello" class="w-52 mb-2" />
 					<h1 class="text-4xl font-bold">Hello there, I'm <span class="text-ipvc animate-pulse">João</span>.</h1>
 					<p class="text-zinc-400">Nice to meet you!</p>
@@ -28,11 +28,11 @@ const biographyData = await biography.json();
 						challenges and opportunities to learn and grow. Portuguese native speaker, fluent in English.
 					</p>
 				</div>
-				<div class="h-8 hidden md:block">
+				<div class="h-8 hidden md:block animate-duration-1000 animate-delay-500 animate-ease-in-out">
 					<Separator className="w-1 bg-zinc-800 h-full rounded-full" />
 				</div>
 				<div class="flex flex-col gap-8 md:gap-2">
-					<div class="flex flex-col gap-2 justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-300">
+					<div class="flex flex-col gap-2 justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-1000 delay-500 animate-fade-left animate-once animate-ease-in-out">
 						<h2 class="text-2xl font-bold">About me</h2>
 						<p class="text-zinc-400 text-wrap max-w-[34rem]">
 							{biographyData.about}
@@ -42,20 +42,33 @@ const biographyData = await biography.json();
 							<p>Last update on <span class="underline">{biographyData.updated_at}</span></p>
 						</div>
 					</div>
-					<div class="flex flex-col gap-2 justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-300">
+					<div class="flex flex-col gap-2 justify-center md:justify-start bg-zinc-900/60 border border-zinc-800 shadow-2xl p-8 rounded-lg hover:scale-[1.01] transition-all duration-1000 delay-1000 animate-fade-left animate-once animate-ease-in-out">
 						<h2 class="text-2xl font-bold">Projects</h2>
 						<p class="text-zinc-400 max-w-96 flex flex-col md:gap-3">
-							{projectsData.map((item) => {
-								return (
-									<div class="flex flex-col md:flex-row md:gap-2 justify-start text-start md:text-start md:justify-start items-start md:items-center">
-										<span class="text-zinc-600 hidden md:block">&#62;</span>
-										<a href={item.link} target="_blank" rel="noreferer noopener nofollow" class="text-zinc-300 hover:text-ipvc transition-all duration-500">{item.name}</a>
-										<p class="hidden md:block">∙</p>
-										<p class="text-zinc-400 text-xs font-thin">{item.description}</p>
-									</div>
-								);
+							{projectsData.map((item, index) => {
+							  const delay = (index * 0.3);
+							  return (
+								<div
+								  class={
+									"flex flex-col md:flex-row md:gap-2 justify-start text-start md:text-start md:justify-start items-start md:items-center animate-fade-up animate-once animate-ease-in-out"
+								  }
+								  style={{ animationDelay: `${delay}s` }}
+								>
+								  <span class="text-zinc-600 hidden md:block">&#62;</span>
+								  <a
+									href={item.link}
+									target="_blank"
+									rel="noreferer noopener nofollow"
+									class="text-zinc-300 hover:text-ipvc transition-all duration-500"
+								  >
+									{item.name}
+								  </a>
+								  <p class="hidden md:block">∙</p>
+								  <p class="text-zinc-400 text-xs font-thin">{item.description}</p>
+								</div>
+							  );
 							})}
-						</p>
+						  </p>						  
 					</div>
 				</div>
 			</div>
