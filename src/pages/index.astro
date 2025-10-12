@@ -11,7 +11,7 @@ const biography = await fetch(Astro.url.origin + '/api/biography/get');
 const biographyData = await biography.json();
 ---
 
-<Layout title="João Ferreira | Computer Engineer Student">
+<Layout title="João Ferreira | Cybersecurity Student">
 	<div id="container" class="flex flex-col justify-center items-center h-full md:h-screen">
 		<div class="flex flex-col p-8 md:p-4 gap-8">
 			<div class="flex flex-col md:flex-row gap-8 justify-center items-center">
@@ -23,9 +23,9 @@ const biographyData = await biography.json();
 					<Separator className="mt-4 bg-zinc-800" />
 		
 					<p class="text-zinc-400 mt-4 text-wrap max-w-96">
-						I'm a third year Computer Engineering student at <a class="text-ipvc transition-all duration-300" href="https://www.estg.ipvc.pt/" target="_blank" rel="nofollow noreferrer noopener">Polytechnic Institute of Viana do Castelo</a>, Portugal. 
+						I'm a Cybersecurity student at <a class="text-ipvc transition-all duration-300" href="https://www.estg.ipvc.pt/" target="_blank" rel="nofollow noreferrer noopener">Polytechnic Institute of Viana do Castelo</a>, Portugal. 
 						I'm passionate about technology and software development, and I'm always looking for new 
-						challenges and opportunities to learn and grow. Portuguese native speaker, fluent in English.
+						challenges and opportunities to learn and grow. Portuguese native speaker, fluent in English (C1).
 					</p>
 				</div>
 				<div class="h-8 hidden md:block animate-duration-1000 animate-delay-500 animate-ease-in-out">
